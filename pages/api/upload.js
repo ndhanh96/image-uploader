@@ -31,7 +31,7 @@ const storage = new CloudinaryStorage({
 
 var upload = multer({ storage: storage });
 
-export default function handler(req: any, res: any) {
+export default function handler(req, res) {
   upload.single('photo')(req, res, (err) => {
     // do error handling here
     // console.log(req.files);  
