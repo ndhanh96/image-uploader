@@ -52,12 +52,12 @@ const Home: NextPage = () => {
       formData: true,
     })
     .on('upload-success', (file, respone) => {
-      console.log(respone.body[0].filename);
-      router.push(`uploads/${respone.body[0].filename}`)
+      console.log(respone.body);
+      router.push(respone.body.picture)
     })
     .on('error', (error) => {
       console.error(error.stack);
-    });
+    })
 
   return (
     <div className='flex justify-center items-center w-full h-auto bg-slate-100'>
