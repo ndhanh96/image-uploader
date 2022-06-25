@@ -16,8 +16,8 @@ var storage = multer.diskStorage({
 
 var upload = multer({ storage: storage });
 
-export default function handler(req:any, res: NextApiResponse) {
-  upload.array('photo', 1)(req, {}, (err) => {
+export default function handler(req:any, res: any) {
+  upload.array('photo', 1)(req, res, (err) => {
     // do error handling here
     console.log(req.files); // do something with the files here
     res.status(200).send(req.files);
